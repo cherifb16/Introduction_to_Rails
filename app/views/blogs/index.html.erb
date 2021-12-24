@@ -1,0 +1,18 @@
+<h1> Liste des blogs</h1>
+<p><%= notice %></p>
+<table>
+<tr>
+  <th>Titre</th>
+  <th>Contenu</th>
+</tr>
+  <% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+    <td><%= link_to 'Vérifiez les détails', blog_path(blog.id) %></td>
+    <td><%= link_to "Modifier le blog", edit_blog_path(blog.id), data: { confirm: 'Can I really edit it?' } %></td>
+    <td><%= button_to 'Supprimer le blog', blog_path(blog.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to 'Nouveau blog', new_blog_path %>
