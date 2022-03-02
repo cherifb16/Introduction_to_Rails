@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ujkz</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>bootstrap</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
   <body>
+    <header>
+      <ul>
+        <li><a href="#">Bootstrap text page</a></li>
+        <li><a href="#">top page</a></li>
+        <li><%= link_to 'liste de blogs', blogs_path %></li>
+      </ul>
+    </header>
     <%= yield %>
+    <footer>
+      <p>Operating company DIVE INTO CODE Co., Ltd.</p>
+      <p>© 2015-2016 DIVE INTO CODE Corp.</p>
+    </footer>
   </body>
 </html>
